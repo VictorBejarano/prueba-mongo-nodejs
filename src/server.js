@@ -1,6 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');//modulo de direcciones
+const morgan = require('morgan');
 
 //Inicializaciones
 const app = express();
@@ -19,6 +20,7 @@ app.set('view engine', '.hbs')
 //Middlewares funciones que se 
 //ejecutan a medida que llegan peticiones
 
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 
 //Variables Globales
